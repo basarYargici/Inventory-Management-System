@@ -22,17 +22,10 @@ namespace InventoryManagementSystem
             tbPassword.UseSystemPasswordChar = true; // hide password field
 
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
+        private void lbExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             // changing visibility according to checkbox status
@@ -54,9 +47,20 @@ namespace InventoryManagementSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            login();
-            // close this form, go to next form with giving user as a parameter
+            if (login())
+            {
+                this.Hide();
+                new Form2(user)
+                {
+                    Location = Location,
+                    Size = Size,
+                    StartPosition = StartPosition
+                }.ShowDialog();
 
+                this.Close();
+            }
+            // close this form, go to next form with giving user as a parameter
+           
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -182,7 +186,7 @@ namespace InventoryManagementSystem
 
                     sqlDataAdapter.Fill(dataTable);
                     DataRow rw = dataTable.AsEnumerable().FirstOrDefault(row => row.Field<String>("name") == tbUserName.Text.ToString());
-                    Console.WriteLine("LOG: " + rw.Field<string>("name") + ", " + rw.Field<string>("password"));
+                    //Console.WriteLine("LOG: " + rw.Field<string>("name") + ", " + rw.Field<string>("password"));
 
                     if (rw.Field<string>("name").Equals(tbUserName.Text.ToString()) && rw.Field<string>("password").Equals(tbPassword.Text.ToString()))
                     {
@@ -210,5 +214,7 @@ namespace InventoryManagementSystem
             }
             return true;
         }
+
+
     }
 }
