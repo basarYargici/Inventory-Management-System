@@ -1,9 +1,16 @@
 ﻿namespace InventoryManagementSystem.Entities
 {
-    public class User
+    public class User : IEntity
     {
-        private string name;
+        private string mail;
         private string password;
+        private string type;
+
+        public string Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
 
         public string Password
         {
@@ -11,16 +18,19 @@
             set { password = value; }
         }
 
-        public string Name
+        public string Mail
         {
-            get { return name; }
-            set { name = value; }
+            get { return mail; }
+            set { mail = value; }
         }
 
-        public User(string name, string password)
+        public User(string mail, string password, string type)
         {
-            this.name = name;
+            this.mail = mail;
             this.password = password;
+            this.type = type;
         }
+
+
     }
 }

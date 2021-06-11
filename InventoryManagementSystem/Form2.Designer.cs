@@ -30,6 +30,7 @@ namespace InventoryManagementSystem
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbExit = new System.Windows.Forms.Label();
             this.lblProgramName = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@ namespace InventoryManagementSystem
             this.tblBigger = new System.Windows.Forms.TableLayoutPanel();
             this.hostPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnLogOut = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel1.SuspendLayout();
             this.tblLButtons.SuspendLayout();
             this.tblBigger.SuspendLayout();
@@ -50,6 +52,7 @@ namespace InventoryManagementSystem
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.lbExit);
             this.panel1.Controls.Add(this.lblProgramName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -282,6 +285,96 @@ namespace InventoryManagementSystem
             this.label1.TabIndex = 0;
             this.label1.Text = "Host panel";
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.AllowAnimations = true;
+            this.btnLogOut.AllowMouseEffects = true;
+            this.btnLogOut.AllowToggling = false;
+            this.btnLogOut.AnimationSpeed = 200;
+            this.btnLogOut.AutoGenerateColors = false;
+            this.btnLogOut.AutoRoundBorders = false;
+            this.btnLogOut.AutoSizeLeftIcon = true;
+            this.btnLogOut.AutoSizeRightIcon = true;
+            this.btnLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogOut.BackColor1 = System.Drawing.Color.LightSlateGray;
+            this.btnLogOut.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogOut.BackgroundImage")));
+            this.btnLogOut.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLogOut.ButtonText = "<-- LOG OUT";
+            this.btnLogOut.ButtonTextMarginLeft = 0;
+            this.btnLogOut.ColorContrastOnClick = 45;
+            this.btnLogOut.ColorContrastOnHover = 45;
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnLogOut.CustomizableEdges = borderEdges1;
+            this.btnLogOut.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLogOut.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnLogOut.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnLogOut.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnLogOut.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogOut.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btnLogOut.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnLogOut.IconMarginLeft = 11;
+            this.btnLogOut.IconPadding = 10;
+            this.btnLogOut.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogOut.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnLogOut.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnLogOut.IconSize = 25;
+            this.btnLogOut.IdleBorderColor = System.Drawing.Color.SlateBlue;
+            this.btnLogOut.IdleBorderRadius = 50;
+            this.btnLogOut.IdleBorderThickness = 1;
+            this.btnLogOut.IdleFillColor = System.Drawing.Color.LightSlateGray;
+            this.btnLogOut.IdleIconLeftImage = null;
+            this.btnLogOut.IdleIconRightImage = null;
+            this.btnLogOut.IndicateFocus = false;
+            this.btnLogOut.Location = new System.Drawing.Point(24, 15);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnLogOut.OnDisabledState.BorderRadius = 50;
+            this.btnLogOut.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLogOut.OnDisabledState.BorderThickness = 1;
+            this.btnLogOut.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnLogOut.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnLogOut.OnDisabledState.IconLeftImage = null;
+            this.btnLogOut.OnDisabledState.IconRightImage = null;
+            this.btnLogOut.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnLogOut.onHoverState.BorderRadius = 50;
+            this.btnLogOut.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLogOut.onHoverState.BorderThickness = 1;
+            this.btnLogOut.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.btnLogOut.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.onHoverState.IconLeftImage = null;
+            this.btnLogOut.onHoverState.IconRightImage = null;
+            this.btnLogOut.OnIdleState.BorderColor = System.Drawing.Color.SlateBlue;
+            this.btnLogOut.OnIdleState.BorderRadius = 50;
+            this.btnLogOut.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLogOut.OnIdleState.BorderThickness = 1;
+            this.btnLogOut.OnIdleState.FillColor = System.Drawing.Color.LightSlateGray;
+            this.btnLogOut.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.OnIdleState.IconLeftImage = null;
+            this.btnLogOut.OnIdleState.IconRightImage = null;
+            this.btnLogOut.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnLogOut.OnPressedState.BorderRadius = 50;
+            this.btnLogOut.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnLogOut.OnPressedState.BorderThickness = 1;
+            this.btnLogOut.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btnLogOut.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.OnPressedState.IconLeftImage = null;
+            this.btnLogOut.OnPressedState.IconRightImage = null;
+            this.btnLogOut.Size = new System.Drawing.Size(137, 63);
+            this.btnLogOut.TabIndex = 4;
+            this.btnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogOut.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnLogOut.TextMarginLeft = 0;
+            this.btnLogOut.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnLogOut.UseDefaultRadiusAndThickness = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -316,5 +409,6 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.TableLayoutPanel tblBigger;
         private System.Windows.Forms.Panel hostPanel;
         private System.Windows.Forms.Label label1;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnLogOut;
     }
 }

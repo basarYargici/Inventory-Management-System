@@ -1,13 +1,5 @@
 ﻿using InventoryManagementSystem.Entities;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InventoryManagementSystem
@@ -19,8 +11,8 @@ namespace InventoryManagementSystem
         {
             this.user = user;
             InitializeComponent();
+            imgButton4.Visible = false;
         }
-
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -28,14 +20,19 @@ namespace InventoryManagementSystem
             imgButton1.Image = Properties.Resources.inventory_planning;
             imgButton2.Image = Properties.Resources.login_bg1;
             imgButton3.Image = Properties.Resources.login_bg2;
-            imgButton4.Image = Properties.Resources.login_bg;
+            // if comin entity is user, than show it to him
+            if (user.Type.Equals("SUPERUSER"))
+            {
+                imgButton4.Visible = true;
+                imgButton4.Image = Properties.Resources.login_bg;
+            }
         }
 
         private void lbExit_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+         
         private void imgButton1_Click(object sender, EventArgs e)
         {
             Panel p = hostPanel;
@@ -90,6 +87,19 @@ namespace InventoryManagementSystem
                 myForm.Show();
                 // this.Close();
             }
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new LoginForm()
+            {
+                Location = Location,
+                Size = Size,
+                StartPosition = StartPosition
+            }.ShowDialog();
+
+            this.Close();
         }
     }
 }

@@ -148,7 +148,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserType.cs" />
     <Compile Include="finalDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -246,5 +248,6 @@
   <ItemGroup>
     <None Include="Resources\lock2.bmp" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
