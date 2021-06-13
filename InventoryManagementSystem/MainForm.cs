@@ -4,6 +4,13 @@ using System.Windows.Forms;
 
 namespace InventoryManagementSystem
 {
+    enum UserTypes
+    {
+        SUPERUSER,
+        EMPLOYEE,
+        CUSTOMER
+    }
+
     public partial class MainForm : Form
     {
         User user;
@@ -18,7 +25,7 @@ namespace InventoryManagementSystem
             btnCustomers.Visible = false;
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             btnProducts.Image = Properties.Resources.products;
             btnOrders.Image = Properties.Resources.orders;
@@ -27,7 +34,7 @@ namespace InventoryManagementSystem
             btnCustomers.Image = Properties.Resources.customers;
 
             // if user is SUPERUSER, show all
-            if (user.Type.Equals("SUPERUSER"))
+            if (user.Type.Equals(UserTypes.SUPERUSER.ToString()))
             {
                 btnProducts.Visible = true;
                 btnOrders.Visible = true;
@@ -35,14 +42,14 @@ namespace InventoryManagementSystem
                 btnCustomers.Visible = true;
                 btnEmployees.Visible = true;
             } // if user is EMPLOYEE, show all, but btnEmployees
-            else if (user.Type.Equals("EMPLOYEE"))
+            else if (user.Type.Equals(UserTypes.EMPLOYEE.ToString()))
             {
                 btnProducts.Visible = true;
                 btnOrders.Visible = true;
                 btnCategories.Visible = true;
                 btnCustomers.Visible = true;
             } // if user is CUSTOMER, show only btnProducts and btnOrders
-            else if (user.Type.Equals("CUSTOMER"))
+            else if (user.Type.Equals(UserTypes.CUSTOMER.ToString()))
             {
                 btnProducts.Visible = true;
                 btnOrders.Visible = true;
@@ -74,141 +81,49 @@ namespace InventoryManagementSystem
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            Panel p = hostPanel;
-
-            if (p != null)
-            {
-                while (p.Controls.Count > 0)
-                {
-                    p.Controls[0].Dispose();
-                }
-
-                ProductsForm myForm = new ProductsForm
-                {
-                    FormBorderStyle = FormBorderStyle.None,
-                    TopLevel = false,
-                    AutoScroll = true,
-                    Dock = DockStyle.Fill
-                };
-
-                p.Controls.Add(myForm);
-                //listView1.SmallImageList = ımageList1;
-
-
-                myForm.Show();
-                // this.Close();
-            }
+            openForm(new ProductsForm(), hostPanel);
         }
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
-            Panel p = hostPanel;
-
-            if (p != null)
-            {
-                while (p.Controls.Count > 0)
-                {
-                    p.Controls[0].Dispose();
-                }
-
-                EmployeesForm myForm = new EmployeesForm
-                {
-                    FormBorderStyle = FormBorderStyle.None,
-                    TopLevel = false,
-                    AutoScroll = true,
-                    Dock = DockStyle.Fill
-                };
-
-                p.Controls.Add(myForm);
-                //listView1.SmallImageList = ımageList1;
-
-
-                myForm.Show();
-                // this.Close();
-            }
+            openForm(new EmployeesForm(), hostPanel);
 
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            Panel p = hostPanel;
-
-            if (p != null)
-            {
-                while (p.Controls.Count > 0)
-                {
-                    p.Controls[0].Dispose();
-                }
-
-                CustomersForm myForm = new CustomersForm
-                {
-                    FormBorderStyle = FormBorderStyle.None,
-                    TopLevel = false,
-                    AutoScroll = true,
-                    Dock = DockStyle.Fill
-                };
-
-                p.Controls.Add(myForm);
-                //listView1.SmallImageList = ımageList1;
-
-
-                myForm.Show();
-                // this.Close();
-            }
+            openForm(new CustomersForm(), hostPanel);
         }
 
         private void btnCategories_Click(object sender, EventArgs e)
         {
-            Panel p = hostPanel;
-
-            if (p != null)
-            {
-                while (p.Controls.Count > 0)
-                {
-                    p.Controls[0].Dispose();
-                }
-
-                CategoriesForm myForm = new CategoriesForm
-                {
-                    FormBorderStyle = FormBorderStyle.None,
-                    TopLevel = false,
-                    AutoScroll = true,
-                    Dock = DockStyle.Fill
-                };
-
-                p.Controls.Add(myForm);
-                //listView1.SmallImageList = ımageList1;
-
-
-                myForm.Show();
-                // this.Close();
-            }
+            openForm(new CategoriesForm(), hostPanel);
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            Panel p = hostPanel;
+            openForm(new OrdersForm(), hostPanel);
+        }
 
-            if (p != null)
+        private void openForm(Form form, Panel hostPanel)
+        {
+
+            if (hostPanel != null)
             {
-                while (p.Controls.Count > 0)
+                while (hostPanel.Controls.Count > 0)
                 {
-                    p.Controls[0].Dispose();
+                    hostPanel.Controls[0].Dispose();
                 }
 
-                OrdersForm myForm = new OrdersForm
-                {
-                    FormBorderStyle = FormBorderStyle.None,
-                    TopLevel = false,
-                    AutoScroll = true,
-                    Dock = DockStyle.Fill
-                };
+                form.FormBorderStyle = FormBorderStyle.None;
+                form.TopLevel = false;
+                form.AutoScroll = true;
+                form.Dock = DockStyle.Fill;
 
-                p.Controls.Add(myForm);
+                hostPanel.Controls.Add(form);
                 //listView1.SmallImageList = ımageList1;
 
-
-                myForm.Show();
+                form.Show();
                 // this.Close();
             }
         }

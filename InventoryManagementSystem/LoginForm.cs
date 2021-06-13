@@ -147,7 +147,8 @@ namespace InventoryManagementSystem
         {
             try
             {
-                sqlQuery = "INSERT INTO users VALUES (@mail,@password," + customerTypeInt + ")";
+                sqlQuery = "INSERT INTO users VALUES (@mail,@password," + customerTypeInt + ");" +
+                    "INSERT INTO customers VALUES (@mail,0);";
 
                 sqlConnection = new SqlConnection(connection); // create new connection and open it
                 sqlConnection.Open();
