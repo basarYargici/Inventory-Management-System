@@ -1,7 +1,7 @@
 ﻿
 namespace InventoryManagementSystem
 {
-    partial class Form4
+    partial class OrdersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,11 +37,11 @@ namespace InventoryManagementSystem
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(545, 296);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 17);
+            this.label1.Size = new System.Drawing.Size(84, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "form 4";
+            this.label1.Text = "ORDERS";
             // 
-            // Form4
+            // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -49,7 +49,7 @@ namespace InventoryManagementSystem
             this.ClientSize = new System.Drawing.Size(1192, 712);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form4";
+            this.Name = "OrdersForm";
             this.Text = "Form4";
             this.ResumeLayout(false);
             this.PerformLayout();

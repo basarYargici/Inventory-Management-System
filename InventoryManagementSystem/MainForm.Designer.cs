@@ -1,7 +1,7 @@
 ﻿
 namespace InventoryManagementSystem
 {
-    partial class Form2
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,18 @@ namespace InventoryManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLogOut = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.lbExit = new System.Windows.Forms.Label();
             this.lblProgramName = new System.Windows.Forms.Label();
-            this.imgButton3 = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.imgButton2 = new Bunifu.UI.WinForms.BunifuImageButton();
-            this.imgButton1 = new Bunifu.UI.WinForms.BunifuImageButton();
             this.tblLButtons = new System.Windows.Forms.TableLayoutPanel();
-            this.imgButton4 = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnCustomers = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnProducts = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnCategories = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnOrders = new Bunifu.UI.WinForms.BunifuImageButton();
+            this.btnEmployees = new Bunifu.UI.WinForms.BunifuImageButton();
             this.tblBigger = new System.Windows.Forms.TableLayoutPanel();
             this.hostPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -80,11 +81,11 @@ namespace InventoryManagementSystem
             this.btnLogOut.ColorContrastOnClick = 45;
             this.btnLogOut.ColorContrastOnHover = 45;
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges14.BottomLeft = true;
-            borderEdges14.BottomRight = true;
-            borderEdges14.TopLeft = true;
-            borderEdges14.TopRight = true;
-            this.btnLogOut.CustomizableEdges = borderEdges14;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btnLogOut.CustomizableEdges = borderEdges7;
             this.btnLogOut.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnLogOut.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnLogOut.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -173,178 +174,222 @@ namespace InventoryManagementSystem
             this.lblProgramName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblProgramName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProgramName.ForeColor = System.Drawing.Color.White;
-            this.lblProgramName.Location = new System.Drawing.Point(202, 15);
+            this.lblProgramName.Location = new System.Drawing.Point(275, 15);
             this.lblProgramName.Name = "lblProgramName";
             this.lblProgramName.Size = new System.Drawing.Size(886, 55);
             this.lblProgramName.TabIndex = 1;
             this.lblProgramName.Text = "INVENTORY MANAGAMENT SYSTEM";
             this.lblProgramName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // imgButton3
-            // 
-            this.imgButton3.ActiveImage = null;
-            this.imgButton3.AllowAnimations = true;
-            this.imgButton3.AllowBuffering = false;
-            this.imgButton3.AllowToggling = false;
-            this.imgButton3.AllowZooming = true;
-            this.imgButton3.AllowZoomingOnFocus = false;
-            this.imgButton3.BackColor = System.Drawing.Color.Transparent;
-            this.imgButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.imgButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.imgButton3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imgButton3.ErrorImage")));
-            this.imgButton3.FadeWhenInactive = false;
-            this.imgButton3.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.imgButton3.Image = ((System.Drawing.Image)(resources.GetObject("imgButton3.Image")));
-            this.imgButton3.ImageActive = null;
-            this.imgButton3.ImageLocation = null;
-            this.imgButton3.ImageMargin = 40;
-            this.imgButton3.ImageSize = new System.Drawing.Size(232, 169);
-            this.imgButton3.ImageZoomSize = new System.Drawing.Size(272, 209);
-            this.imgButton3.InitialImage = global::InventoryManagementSystem.Properties.Resources._lock;
-            this.imgButton3.Location = new System.Drawing.Point(3, 433);
-            this.imgButton3.Name = "imgButton3";
-            this.imgButton3.Rotation = 0;
-            this.imgButton3.ShowActiveImage = true;
-            this.imgButton3.ShowCursorChanges = true;
-            this.imgButton3.ShowImageBorders = true;
-            this.imgButton3.ShowSizeMarkers = false;
-            this.imgButton3.Size = new System.Drawing.Size(272, 209);
-            this.imgButton3.TabIndex = 7;
-            this.imgButton3.ToolTipText = "";
-            this.imgButton3.WaitOnLoad = false;
-            this.imgButton3.Zoom = 40;
-            this.imgButton3.ZoomSpeed = 10;
-            // 
-            // imgButton2
-            // 
-            this.imgButton2.ActiveImage = null;
-            this.imgButton2.AllowAnimations = true;
-            this.imgButton2.AllowBuffering = false;
-            this.imgButton2.AllowToggling = false;
-            this.imgButton2.AllowZooming = true;
-            this.imgButton2.AllowZoomingOnFocus = false;
-            this.imgButton2.BackColor = System.Drawing.Color.Transparent;
-            this.imgButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.imgButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.imgButton2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imgButton2.ErrorImage")));
-            this.imgButton2.FadeWhenInactive = false;
-            this.imgButton2.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.imgButton2.Image = ((System.Drawing.Image)(resources.GetObject("imgButton2.Image")));
-            this.imgButton2.ImageActive = null;
-            this.imgButton2.ImageLocation = null;
-            this.imgButton2.ImageMargin = 40;
-            this.imgButton2.ImageSize = new System.Drawing.Size(232, 169);
-            this.imgButton2.ImageZoomSize = new System.Drawing.Size(272, 209);
-            this.imgButton2.InitialImage = global::InventoryManagementSystem.Properties.Resources._lock;
-            this.imgButton2.Location = new System.Drawing.Point(3, 218);
-            this.imgButton2.Name = "imgButton2";
-            this.imgButton2.Rotation = 0;
-            this.imgButton2.ShowActiveImage = true;
-            this.imgButton2.ShowCursorChanges = true;
-            this.imgButton2.ShowImageBorders = true;
-            this.imgButton2.ShowSizeMarkers = false;
-            this.imgButton2.Size = new System.Drawing.Size(272, 209);
-            this.imgButton2.TabIndex = 6;
-            this.imgButton2.ToolTipText = "";
-            this.imgButton2.WaitOnLoad = false;
-            this.imgButton2.Zoom = 40;
-            this.imgButton2.ZoomSpeed = 10;
-            this.imgButton2.Click += new System.EventHandler(this.imgButton2_Click);
-            // 
-            // imgButton1
-            // 
-            this.imgButton1.ActiveImage = null;
-            this.imgButton1.AllowAnimations = true;
-            this.imgButton1.AllowBuffering = false;
-            this.imgButton1.AllowToggling = false;
-            this.imgButton1.AllowZooming = true;
-            this.imgButton1.AllowZoomingOnFocus = false;
-            this.imgButton1.BackColor = System.Drawing.Color.Transparent;
-            this.imgButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.imgButton1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.imgButton1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imgButton1.ErrorImage")));
-            this.imgButton1.FadeWhenInactive = false;
-            this.imgButton1.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.imgButton1.Image = ((System.Drawing.Image)(resources.GetObject("imgButton1.Image")));
-            this.imgButton1.ImageActive = null;
-            this.imgButton1.ImageLocation = null;
-            this.imgButton1.ImageMargin = 40;
-            this.imgButton1.ImageSize = new System.Drawing.Size(232, 169);
-            this.imgButton1.ImageZoomSize = new System.Drawing.Size(272, 209);
-            this.imgButton1.InitialImage = global::InventoryManagementSystem.Properties.Resources._lock;
-            this.imgButton1.Location = new System.Drawing.Point(3, 3);
-            this.imgButton1.Name = "imgButton1";
-            this.imgButton1.Rotation = 0;
-            this.imgButton1.ShowActiveImage = true;
-            this.imgButton1.ShowCursorChanges = true;
-            this.imgButton1.ShowImageBorders = true;
-            this.imgButton1.ShowSizeMarkers = false;
-            this.imgButton1.Size = new System.Drawing.Size(272, 209);
-            this.imgButton1.TabIndex = 5;
-            this.imgButton1.ToolTipText = "";
-            this.imgButton1.WaitOnLoad = false;
-            this.imgButton1.Zoom = 40;
-            this.imgButton1.ZoomSpeed = 10;
-            this.imgButton1.Click += new System.EventHandler(this.imgButton1_Click);
-            // 
             // tblLButtons
             // 
             this.tblLButtons.AutoScroll = true;
-            this.tblLButtons.AutoScrollMinSize = new System.Drawing.Size(0, 707);
+            this.tblLButtons.AutoScrollMinSize = new System.Drawing.Size(0, 500);
             this.tblLButtons.AutoSize = true;
+            this.tblLButtons.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tblLButtons.ColumnCount = 1;
             this.tblLButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblLButtons.Controls.Add(this.imgButton4, 0, 3);
-            this.tblLButtons.Controls.Add(this.imgButton1, 0, 0);
-            this.tblLButtons.Controls.Add(this.imgButton3, 0, 2);
-            this.tblLButtons.Controls.Add(this.imgButton2, 0, 1);
+            this.tblLButtons.Controls.Add(this.btnCustomers, 0, 3);
+            this.tblLButtons.Controls.Add(this.btnProducts, 0, 0);
+            this.tblLButtons.Controls.Add(this.btnCategories, 0, 2);
+            this.tblLButtons.Controls.Add(this.btnOrders, 0, 1);
+            this.tblLButtons.Controls.Add(this.btnEmployees, 0, 4);
             this.tblLButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblLButtons.Location = new System.Drawing.Point(3, 3);
             this.tblLButtons.Name = "tblLButtons";
-            this.tblLButtons.RowCount = 6;
-            this.tblLButtons.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblLButtons.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblLButtons.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblLButtons.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblLButtons.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblLButtons.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblLButtons.Size = new System.Drawing.Size(239, 707);
+            this.tblLButtons.RowCount = 5;
+            this.tblLButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblLButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblLButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblLButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblLButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblLButtons.Size = new System.Drawing.Size(238, 707);
             this.tblLButtons.TabIndex = 7;
             // 
-            // imgButton4
+            // btnCustomers
             // 
-            this.imgButton4.ActiveImage = null;
-            this.imgButton4.AllowAnimations = true;
-            this.imgButton4.AllowBuffering = false;
-            this.imgButton4.AllowToggling = false;
-            this.imgButton4.AllowZooming = true;
-            this.imgButton4.AllowZoomingOnFocus = false;
-            this.imgButton4.BackColor = System.Drawing.Color.Transparent;
-            this.imgButton4.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.imgButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.imgButton4.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imgButton4.ErrorImage")));
-            this.imgButton4.FadeWhenInactive = false;
-            this.imgButton4.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
-            this.imgButton4.Image = ((System.Drawing.Image)(resources.GetObject("imgButton4.Image")));
-            this.imgButton4.ImageActive = null;
-            this.imgButton4.ImageLocation = null;
-            this.imgButton4.ImageMargin = 40;
-            this.imgButton4.ImageSize = new System.Drawing.Size(232, 169);
-            this.imgButton4.ImageZoomSize = new System.Drawing.Size(272, 209);
-            this.imgButton4.InitialImage = global::InventoryManagementSystem.Properties.Resources._lock;
-            this.imgButton4.Location = new System.Drawing.Point(3, 648);
-            this.imgButton4.Name = "imgButton4";
-            this.imgButton4.Rotation = 0;
-            this.imgButton4.ShowActiveImage = true;
-            this.imgButton4.ShowCursorChanges = true;
-            this.imgButton4.ShowImageBorders = true;
-            this.imgButton4.ShowSizeMarkers = false;
-            this.imgButton4.Size = new System.Drawing.Size(272, 209);
-            this.imgButton4.TabIndex = 9;
-            this.imgButton4.ToolTipText = "";
-            this.imgButton4.WaitOnLoad = false;
-            this.imgButton4.Zoom = 40;
-            this.imgButton4.ZoomSpeed = 10;
+            this.btnCustomers.ActiveImage = null;
+            this.btnCustomers.AllowAnimations = true;
+            this.btnCustomers.AllowBuffering = false;
+            this.btnCustomers.AllowToggling = false;
+            this.btnCustomers.AllowZooming = true;
+            this.btnCustomers.AllowZoomingOnFocus = false;
+            this.btnCustomers.BackColor = System.Drawing.Color.Transparent;
+            this.btnCustomers.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCustomers.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnCustomers.ErrorImage")));
+            this.btnCustomers.FadeWhenInactive = false;
+            this.btnCustomers.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnCustomers.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomers.Image")));
+            this.btnCustomers.ImageActive = null;
+            this.btnCustomers.ImageLocation = null;
+            this.btnCustomers.ImageMargin = 40;
+            this.btnCustomers.ImageSize = new System.Drawing.Size(192, 95);
+            this.btnCustomers.ImageZoomSize = new System.Drawing.Size(232, 135);
+            this.btnCustomers.InitialImage = global::InventoryManagementSystem.Properties.Resources._lock;
+            this.btnCustomers.Location = new System.Drawing.Point(3, 427);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Rotation = 0;
+            this.btnCustomers.ShowActiveImage = true;
+            this.btnCustomers.ShowCursorChanges = true;
+            this.btnCustomers.ShowImageBorders = true;
+            this.btnCustomers.ShowSizeMarkers = false;
+            this.btnCustomers.Size = new System.Drawing.Size(232, 135);
+            this.btnCustomers.TabIndex = 9;
+            this.btnCustomers.ToolTipText = "CUSTOMERS";
+            this.btnCustomers.UseWaitCursor = true;
+            this.btnCustomers.WaitOnLoad = false;
+            this.btnCustomers.Zoom = 40;
+            this.btnCustomers.ZoomSpeed = 10;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
+            // 
+            // btnProducts
+            // 
+            this.btnProducts.ActiveImage = null;
+            this.btnProducts.AllowAnimations = true;
+            this.btnProducts.AllowBuffering = false;
+            this.btnProducts.AllowToggling = false;
+            this.btnProducts.AllowZooming = true;
+            this.btnProducts.AllowZoomingOnFocus = false;
+            this.btnProducts.BackColor = System.Drawing.Color.Transparent;
+            this.btnProducts.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnProducts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnProducts.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnProducts.ErrorImage")));
+            this.btnProducts.FadeWhenInactive = false;
+            this.btnProducts.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnProducts.Image")));
+            this.btnProducts.ImageActive = null;
+            this.btnProducts.ImageLocation = null;
+            this.btnProducts.ImageMargin = 40;
+            this.btnProducts.ImageSize = new System.Drawing.Size(192, 95);
+            this.btnProducts.ImageZoomSize = new System.Drawing.Size(232, 135);
+            this.btnProducts.InitialImage = global::InventoryManagementSystem.Properties.Resources._lock;
+            this.btnProducts.Location = new System.Drawing.Point(3, 3);
+            this.btnProducts.Name = "btnProducts";
+            this.btnProducts.Rotation = 0;
+            this.btnProducts.ShowActiveImage = true;
+            this.btnProducts.ShowCursorChanges = true;
+            this.btnProducts.ShowImageBorders = true;
+            this.btnProducts.ShowSizeMarkers = false;
+            this.btnProducts.Size = new System.Drawing.Size(232, 135);
+            this.btnProducts.TabIndex = 5;
+            this.btnProducts.ToolTipText = "PRODUCTS";
+            this.btnProducts.UseWaitCursor = true;
+            this.btnProducts.WaitOnLoad = false;
+            this.btnProducts.Zoom = 40;
+            this.btnProducts.ZoomSpeed = 10;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
+            // 
+            // btnCategories
+            // 
+            this.btnCategories.ActiveImage = null;
+            this.btnCategories.AllowAnimations = true;
+            this.btnCategories.AllowBuffering = false;
+            this.btnCategories.AllowToggling = false;
+            this.btnCategories.AllowZooming = true;
+            this.btnCategories.AllowZoomingOnFocus = false;
+            this.btnCategories.BackColor = System.Drawing.Color.Transparent;
+            this.btnCategories.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCategories.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCategories.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnCategories.ErrorImage")));
+            this.btnCategories.FadeWhenInactive = false;
+            this.btnCategories.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnCategories.Image = ((System.Drawing.Image)(resources.GetObject("btnCategories.Image")));
+            this.btnCategories.ImageActive = null;
+            this.btnCategories.ImageLocation = null;
+            this.btnCategories.ImageMargin = 40;
+            this.btnCategories.ImageSize = new System.Drawing.Size(192, 95);
+            this.btnCategories.ImageZoomSize = new System.Drawing.Size(232, 135);
+            this.btnCategories.InitialImage = global::InventoryManagementSystem.Properties.Resources._lock;
+            this.btnCategories.Location = new System.Drawing.Point(3, 285);
+            this.btnCategories.Name = "btnCategories";
+            this.btnCategories.Rotation = 0;
+            this.btnCategories.ShowActiveImage = true;
+            this.btnCategories.ShowCursorChanges = true;
+            this.btnCategories.ShowImageBorders = true;
+            this.btnCategories.ShowSizeMarkers = false;
+            this.btnCategories.Size = new System.Drawing.Size(232, 135);
+            this.btnCategories.TabIndex = 7;
+            this.btnCategories.ToolTipText = "CATEGORIES";
+            this.btnCategories.UseWaitCursor = true;
+            this.btnCategories.WaitOnLoad = false;
+            this.btnCategories.Zoom = 40;
+            this.btnCategories.ZoomSpeed = 10;
+            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
+            // 
+            // btnOrders
+            // 
+            this.btnOrders.ActiveImage = null;
+            this.btnOrders.AllowAnimations = true;
+            this.btnOrders.AllowBuffering = false;
+            this.btnOrders.AllowToggling = false;
+            this.btnOrders.AllowZooming = true;
+            this.btnOrders.AllowZoomingOnFocus = false;
+            this.btnOrders.BackColor = System.Drawing.Color.Transparent;
+            this.btnOrders.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnOrders.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnOrders.ErrorImage")));
+            this.btnOrders.FadeWhenInactive = false;
+            this.btnOrders.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnOrders.Image")));
+            this.btnOrders.ImageActive = null;
+            this.btnOrders.ImageLocation = null;
+            this.btnOrders.ImageMargin = 40;
+            this.btnOrders.ImageSize = new System.Drawing.Size(192, 95);
+            this.btnOrders.ImageZoomSize = new System.Drawing.Size(232, 135);
+            this.btnOrders.InitialImage = global::InventoryManagementSystem.Properties.Resources._lock;
+            this.btnOrders.Location = new System.Drawing.Point(3, 144);
+            this.btnOrders.Name = "btnOrders";
+            this.btnOrders.Rotation = 0;
+            this.btnOrders.ShowActiveImage = true;
+            this.btnOrders.ShowCursorChanges = true;
+            this.btnOrders.ShowImageBorders = true;
+            this.btnOrders.ShowSizeMarkers = false;
+            this.btnOrders.Size = new System.Drawing.Size(232, 135);
+            this.btnOrders.TabIndex = 6;
+            this.btnOrders.ToolTipText = "ORDER HISTORY";
+            this.btnOrders.UseWaitCursor = true;
+            this.btnOrders.WaitOnLoad = false;
+            this.btnOrders.Zoom = 40;
+            this.btnOrders.ZoomSpeed = 10;
+            this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
+            // 
+            // btnEmployees
+            // 
+            this.btnEmployees.ActiveImage = null;
+            this.btnEmployees.AllowAnimations = true;
+            this.btnEmployees.AllowBuffering = false;
+            this.btnEmployees.AllowToggling = false;
+            this.btnEmployees.AllowZooming = true;
+            this.btnEmployees.AllowZoomingOnFocus = false;
+            this.btnEmployees.BackColor = System.Drawing.Color.Transparent;
+            this.btnEmployees.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEmployees.ErrorImage = ((System.Drawing.Image)(resources.GetObject("btnEmployees.ErrorImage")));
+            this.btnEmployees.FadeWhenInactive = false;
+            this.btnEmployees.Flip = Bunifu.UI.WinForms.BunifuImageButton.FlipOrientation.Normal;
+            this.btnEmployees.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployees.Image")));
+            this.btnEmployees.ImageActive = null;
+            this.btnEmployees.ImageLocation = null;
+            this.btnEmployees.ImageMargin = 40;
+            this.btnEmployees.ImageSize = new System.Drawing.Size(192, 97);
+            this.btnEmployees.ImageZoomSize = new System.Drawing.Size(232, 137);
+            this.btnEmployees.InitialImage = global::InventoryManagementSystem.Properties.Resources._lock;
+            this.btnEmployees.Location = new System.Drawing.Point(3, 567);
+            this.btnEmployees.Name = "btnEmployees";
+            this.btnEmployees.Rotation = 0;
+            this.btnEmployees.ShowActiveImage = true;
+            this.btnEmployees.ShowCursorChanges = true;
+            this.btnEmployees.ShowImageBorders = true;
+            this.btnEmployees.ShowSizeMarkers = false;
+            this.btnEmployees.Size = new System.Drawing.Size(232, 137);
+            this.btnEmployees.TabIndex = 10;
+            this.btnEmployees.ToolTipText = "EMPLOYEES";
+            this.btnEmployees.UseWaitCursor = true;
+            this.btnEmployees.WaitOnLoad = false;
+            this.btnEmployees.Zoom = 40;
+            this.btnEmployees.ZoomSpeed = 10;
+            this.btnEmployees.Click += new System.EventHandler(this.btnEmployees_Click);
             // 
             // tblBigger
             // 
@@ -366,9 +411,9 @@ namespace InventoryManagementSystem
             this.hostPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.hostPanel.Controls.Add(this.label1);
             this.hostPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hostPanel.Location = new System.Drawing.Point(248, 3);
+            this.hostPanel.Location = new System.Drawing.Point(247, 3);
             this.hostPanel.Name = "hostPanel";
-            this.hostPanel.Size = new System.Drawing.Size(1198, 707);
+            this.hostPanel.Size = new System.Drawing.Size(1199, 707);
             this.hostPanel.TabIndex = 8;
             // 
             // label1
@@ -380,7 +425,7 @@ namespace InventoryManagementSystem
             this.label1.TabIndex = 0;
             this.label1.Text = "Host panel";
             // 
-            // Form2
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -389,7 +434,7 @@ namespace InventoryManagementSystem
             this.Controls.Add(this.tblBigger);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form2";
+            this.Name = "MainForm";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
@@ -404,17 +449,18 @@ namespace InventoryManagementSystem
         }
 
         #endregion
-        private Bunifu.UI.WinForms.BunifuImageButton imgButton1;
-        private Bunifu.UI.WinForms.BunifuImageButton imgButton3;
-        private Bunifu.UI.WinForms.BunifuImageButton imgButton2;
+        private Bunifu.UI.WinForms.BunifuImageButton btnProducts;
+        private Bunifu.UI.WinForms.BunifuImageButton btnCategories;
+        private Bunifu.UI.WinForms.BunifuImageButton btnOrders;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbExit;
         private System.Windows.Forms.Label lblProgramName;
         private System.Windows.Forms.TableLayoutPanel tblLButtons;
-        private Bunifu.UI.WinForms.BunifuImageButton imgButton4;
         private System.Windows.Forms.TableLayoutPanel tblBigger;
         private System.Windows.Forms.Panel hostPanel;
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnLogOut;
+        private Bunifu.UI.WinForms.BunifuImageButton btnEmployees;
+        private Bunifu.UI.WinForms.BunifuImageButton btnCustomers;
     }
 }

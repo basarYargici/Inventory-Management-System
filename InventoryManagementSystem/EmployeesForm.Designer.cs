@@ -1,7 +1,7 @@
 ﻿
 namespace InventoryManagementSystem
 {
-    partial class Form3
+    partial class EmployeesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,24 +35,21 @@ namespace InventoryManagementSystem
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(548, 341);
+            this.label1.Location = new System.Drawing.Point(376, 217);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "form 3";
+            this.label1.Size = new System.Drawing.Size(115, 21);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "EMPLOYEES";
             // 
-            // Form3
+            // EmployeesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1190, 705);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimizeBox = false;
-            this.Name = "Form3";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form3";
+            this.Name = "EmployeesForm";
+            this.Text = "EmployeeForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

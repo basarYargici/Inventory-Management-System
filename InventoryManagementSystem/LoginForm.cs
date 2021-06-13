@@ -15,8 +15,8 @@ namespace InventoryManagementSystem
         private int customerTypeInt = 3;
         SqlConnection sqlConnection;
         SqlCommand sqlCommand;
-        User user; 
-        
+        User user;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -51,7 +51,7 @@ namespace InventoryManagementSystem
             if (login())
             {
                 this.Hide();
-                new Form2(user)
+                new MainForm(user)
                 {
                     Location = Location,
                     Size = Size,
@@ -61,7 +61,7 @@ namespace InventoryManagementSystem
                 this.Close();
             }
             // close this form, go to next form with giving user as a parameter
-           
+
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -147,7 +147,7 @@ namespace InventoryManagementSystem
         {
             try
             {
-                sqlQuery = "INSERT INTO users VALUES (@mail,@password,"+ customerTypeInt + ")";
+                sqlQuery = "INSERT INTO users VALUES (@mail,@password," + customerTypeInt + ")";
 
                 sqlConnection = new SqlConnection(connection); // create new connection and open it
                 sqlConnection.Open();
@@ -159,7 +159,7 @@ namespace InventoryManagementSystem
                 sqlCommand.ExecuteNonQuery();
 
                 sqlConnection.Close();
-                user = new User(tbMail.Text.ToString(), tbPassword.Text.ToString(),customerType);
+                user = new User(tbMail.Text.ToString(), tbPassword.Text.ToString(), customerType);
                 return true;
             }
             catch (Exception ex)
