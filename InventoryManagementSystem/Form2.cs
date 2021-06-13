@@ -20,6 +20,7 @@ namespace InventoryManagementSystem
             imgButton1.Image = Properties.Resources.inventory_planning;
             imgButton2.Image = Properties.Resources.login_bg1;
             imgButton3.Image = Properties.Resources.login_bg2;
+
             // if comin entity is user, than show it to him
             if (user.Type.Equals("SUPERUSER"))
             {
