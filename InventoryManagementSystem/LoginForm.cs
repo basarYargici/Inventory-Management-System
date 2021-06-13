@@ -57,7 +57,6 @@ namespace InventoryManagementSystem
                     Size = Size,
                     StartPosition = StartPosition
                 }.ShowDialog();
-
                 this.Close();
             }
             // close this form, go to next form with giving user as a parameter

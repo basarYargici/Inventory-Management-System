@@ -75,8 +75,8 @@ namespace InventoryManagementSystem
                 Size = Size,
                 StartPosition = StartPosition
             }.ShowDialog();
-
             this.Close();
+
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
