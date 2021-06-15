@@ -34,11 +34,11 @@ namespace InventoryManagementSystem
                 var dataSet = new DataSet();
                 sqlDataAdapter.Fill(dataSet);
                 dgvCustomers.DataSource = dataSet.Tables[0];
-                
                 sqlConnection.Close();
             }
             catch (Exception ex)
             {
+                sqlConnection.Close();
                 MessageBox.Show(ex.Message);
             }
         }
@@ -56,11 +56,13 @@ namespace InventoryManagementSystem
 
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
+                MessageBox.Show("New category added");
 
                 populate();
             }
             catch (Exception ex)
             {
+                sqlConnection.Close();
                 MessageBox.Show(ex.Message);
             }
         }
@@ -80,11 +82,13 @@ namespace InventoryManagementSystem
 
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
+                MessageBox.Show("Category name updated");
 
                 populate();
             }
             catch (Exception ex)
             {
+                sqlConnection.Close();
                 MessageBox.Show(ex.Message);
             }
         }
@@ -95,7 +99,9 @@ namespace InventoryManagementSystem
             
             try
             {
-                sqlQuery = "DELETE FROM categories WHERE id = (@id);";
+                // first all products should be deleted whose categoryId entity equals id of category 
+                sqlQuery = "DELETE FROM products WHERE categoryId = (@id);" +
+                    "DELETE FROM categories WHERE id = (@id);";
                 sqlConnection.Open();
 
                 sqlCommand = new SqlCommand(sqlQuery, sqlConnection); // execute sql command with connection and parameters
@@ -103,11 +109,13 @@ namespace InventoryManagementSystem
 
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
+                MessageBox.Show("Category and related products are deleted");
 
                 populate();
             }
             catch (Exception ex)
             {
+                sqlConnection.Close();
                 MessageBox.Show(ex.Message);
             }
         }
