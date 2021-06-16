@@ -10,9 +10,9 @@ namespace InventoryManagementSystem
         private static string connection = "Data Source=192.168.0.31;Initial Catalog=finalDB;Persist Security Info=True;User ID=SA;Password=password1";
         private string sqlQuery;
 
-        SqlConnection sqlConnection = new SqlConnection(connection); 
+        SqlConnection sqlConnection = new SqlConnection(connection);
         SqlCommand sqlCommand;
-        
+
         private int selectedRowId;
 
         public CategoriesForm()
@@ -25,7 +25,7 @@ namespace InventoryManagementSystem
         {
             try
             {
-                sqlQuery = "SELECT * FROM categories ORDER BY id;";
+                sqlQuery = "SELECT categories.id AS 'ID', categories.name AS 'Category'  FROM categories ORDER BY id;";
                 sqlConnection.Open();
 
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlQuery, connection);
@@ -69,8 +69,8 @@ namespace InventoryManagementSystem
 
         private void btnEdit_Click(object sender, System.EventArgs e)
         {
-            selectedRowId = Int32.Parse(dgvCustomers.SelectedRows[0].Cells["id"].Value.ToString());
-            
+            selectedRowId = Int32.Parse(dgvCustomers.SelectedRows[0].Cells["ID"].Value.ToString());
+
             try
             {
                 sqlQuery = "UPDATE categories SET name = (@category) where id = (@id);";
@@ -95,8 +95,8 @@ namespace InventoryManagementSystem
 
         private void btnDelete_Click(object sender, System.EventArgs e)
         {
-            selectedRowId = Int32.Parse(dgvCustomers.SelectedRows[0].Cells["id"].Value.ToString());
-            
+            selectedRowId = Int32.Parse(dgvCustomers.SelectedRows[0].Cells["ID"].Value.ToString());
+
             try
             {
                 // first all products should be deleted whose categoryId entity equals id of category 
@@ -125,6 +125,12 @@ namespace InventoryManagementSystem
             populate();
         }
 
+        // Set the text of labels as selected row datas
 
+        private void dgvCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string category = dgvCustomers.SelectedRows[0].Cells["Category"].Value.ToString();
+            tbCategory.Text = category;
+        }
     }
 }

@@ -81,7 +81,14 @@ namespace InventoryManagementSystem
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            openForm(new ProductsForm(), hostPanel);
+            if (!user.Type.Equals(UserTypes.CUSTOMER.ToString()))
+            {
+                openForm(new NonCustomerProductsForm(), hostPanel);
+            }
+            else
+            {
+                openForm(new CustomerProductsForm(user), hostPanel);
+            }
         }
 
         private void btnEmployees_Click(object sender, EventArgs e)

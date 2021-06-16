@@ -44,20 +44,20 @@ namespace InventoryManagementSystem
             this.tblBack = new System.Windows.Forms.TableLayoutPanel();
             this.dgvCustomers = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.tblLeft = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnDelete = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnEdit = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnAdd = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.tbCategory = new Bunifu.UI.WinForms.BunifuTextBox();
             this.finalDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.tblBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.tblLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.finalDBDataSetBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.finalDBDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tblBack
@@ -72,6 +72,7 @@ namespace InventoryManagementSystem
             this.tblBack.Name = "tblBack";
             this.tblBack.RowCount = 1;
             this.tblBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblBack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 630F));
             this.tblBack.Size = new System.Drawing.Size(1194, 630);
             this.tblBack.TabIndex = 3;
             // 
@@ -136,6 +137,7 @@ namespace InventoryManagementSystem
             this.dgvCustomers.Size = new System.Drawing.Size(830, 624);
             this.dgvCustomers.TabIndex = 1;
             this.dgvCustomers.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.dgvCustomers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellClick);
             // 
             // tblLeft
             // 
@@ -156,6 +158,43 @@ namespace InventoryManagementSystem
             this.tblLeft.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblLeft.Size = new System.Drawing.Size(352, 624);
             this.tblLeft.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tblBack, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1200, 706);
+            this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1194, 64);
+            this.panel1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkGray;
+            this.label1.Location = new System.Drawing.Point(379, -1);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(325, 65);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CATEGORIES ";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnDelete
             // 
@@ -187,7 +226,7 @@ namespace InventoryManagementSystem
             this.btnDelete.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDelete.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDelete.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -241,7 +280,7 @@ namespace InventoryManagementSystem
             this.btnDelete.OnPressedState.IconRightImage = null;
             this.btnDelete.Size = new System.Drawing.Size(346, 150);
             this.btnDelete.TabIndex = 15;
-            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDelete.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnDelete.TextMarginLeft = 0;
             this.btnDelete.TextPadding = new System.Windows.Forms.Padding(0);
@@ -278,7 +317,7 @@ namespace InventoryManagementSystem
             this.btnEdit.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEdit.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEdit.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -332,7 +371,7 @@ namespace InventoryManagementSystem
             this.btnEdit.OnPressedState.IconRightImage = null;
             this.btnEdit.Size = new System.Drawing.Size(346, 150);
             this.btnEdit.TabIndex = 14;
-            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnEdit.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnEdit.TextMarginLeft = 0;
             this.btnEdit.TextPadding = new System.Windows.Forms.Padding(0);
@@ -369,7 +408,7 @@ namespace InventoryManagementSystem
             this.btnAdd.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAdd.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -423,7 +462,7 @@ namespace InventoryManagementSystem
             this.btnAdd.OnPressedState.IconRightImage = null;
             this.btnAdd.Size = new System.Drawing.Size(346, 150);
             this.btnAdd.TabIndex = 13;
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAdd.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnAdd.TextMarginLeft = 0;
             this.btnAdd.TextPadding = new System.Windows.Forms.Padding(0);
@@ -447,7 +486,7 @@ namespace InventoryManagementSystem
             this.tbCategory.BorderThickness = 1;
             this.tbCategory.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.tbCategory.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbCategory.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.tbCategory.DefaultFont = new System.Drawing.Font("Segoe UI", 14F);
             this.tbCategory.DefaultText = "";
             this.tbCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbCategory.FillColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -506,42 +545,6 @@ namespace InventoryManagementSystem
             this.tbCategory.UseSystemPasswordChar = false;
             this.tbCategory.WordWrap = true;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tblBack, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1200, 706);
-            this.tableLayoutPanel1.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1194, 64);
-            this.panel1.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkGray;
-            this.label1.Location = new System.Drawing.Point(379, -1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(325, 65);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CATEGORIES ";
-            // 
             // CategoriesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -555,10 +558,10 @@ namespace InventoryManagementSystem
             this.tblBack.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.tblLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.finalDBDataSetBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.finalDBDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -571,10 +574,10 @@ namespace InventoryManagementSystem
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnDelete;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnEdit;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAdd;
-        private Bunifu.UI.WinForms.BunifuTextBox tbCategory;
         private Bunifu.UI.WinForms.BunifuDataGridView dgvCustomers;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private Bunifu.UI.WinForms.BunifuTextBox tbCategory;
     }
 }
