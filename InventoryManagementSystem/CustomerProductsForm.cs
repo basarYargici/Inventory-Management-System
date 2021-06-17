@@ -9,7 +9,7 @@ namespace InventoryManagementSystem
     {
         private ProductsHelper productsHelper;
         User user;
-
+        private int piece;
 
         private float bill;
         public CustomerProductsForm(User user)
@@ -29,8 +29,6 @@ namespace InventoryManagementSystem
             cbPiece.Items.Clear();
             getBill(user);
 
-            productsHelper.SelectedRowQuantity = Int32.Parse(dgvProducts.SelectedRows[0].Cells["Quantity"].Value.ToString());
-
             for (int i = 1; i <= productsHelper.SelectedRowQuantity; i++)
             {
                 cbPiece.Items.Add(i);
@@ -40,33 +38,43 @@ namespace InventoryManagementSystem
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            productsHelper.SelectedRowId = Int32.Parse(dgvProducts.SelectedRows[0].Cells["ID"].Value.ToString());
-            productsHelper.SelectedRowPrice = float.Parse(dgvProducts.SelectedRows[0].Cells["Price"].Value.ToString());
-
-            // check category name validation
-            try
+            if (dgvProducts.CurrentCell.RowIndex + 2 < dgvProducts.RowCount)
             {
-                productsHelper.SqlQuery = "INSERT INTO customers_products VALUES (@mail,@product_id);";
-                productsHelper.SqlConnection.Open();
+                productsHelper.SelectedRowId = Int32.Parse(dgvProducts.SelectedRows[0].Cells["ID"].Value.ToString());
+                productsHelper.SelectedRowPrice = float.Parse(dgvProducts.SelectedRows[0].Cells["Price"].Value.ToString());
 
-                productsHelper.SqlCommand = new SqlCommand(productsHelper.SqlQuery, productsHelper.SqlConnection); // execute sql command with connection and parameters
-                productsHelper.SqlCommand.Parameters.AddWithValue("mail", user.Mail);
-                productsHelper.SqlCommand.Parameters.AddWithValue("product_id", productsHelper.SelectedRowId);
+                // check category name validation
+                try
+                {
+                    piece = Int32.Parse(cbPiece.SelectedItem.ToString());
+                    productsHelper.SqlQuery = "INSERT INTO customers_products VALUES (@mail,@product_id," + piece + ");";
+                    productsHelper.SqlConnection.Open();
 
-                productsHelper.SqlCommand.ExecuteNonQuery();
-                productsHelper.SqlConnection.Close();
+                    productsHelper.SqlCommand = new SqlCommand(productsHelper.SqlQuery, productsHelper.SqlConnection); // execute sql command with connection and parameters
+                    productsHelper.SqlCommand.Parameters.AddWithValue("mail", user.Mail);
+                    productsHelper.SqlCommand.Parameters.AddWithValue("product_id", productsHelper.SelectedRowId);
 
-                bill += productsHelper.SelectedRowPrice;
+                    productsHelper.SqlCommand.ExecuteNonQuery();
+                    productsHelper.SqlConnection.Close();
 
-                setBill(bill);
-                MessageBox.Show("The product has been purchased!");
+                    bill += (productsHelper.SelectedRowPrice * piece);
+                    Console.WriteLine("bill: " + bill);
+                    Console.WriteLine("piece: " + piece);
 
-                productsHelper.populate(productsHelper.SqlConnection, dgvProducts);
+                    setBill(bill);
+                    MessageBox.Show("The product has been purchased!");
+
+                    productsHelper.populate(productsHelper.SqlConnection, dgvProducts);
+                }
+                catch (Exception ex)
+                {
+                    productsHelper.SqlConnection.Close();
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                productsHelper.SqlConnection.Close();
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please select a valid product");
             }
         }
 
@@ -83,7 +91,6 @@ namespace InventoryManagementSystem
 
         private float getBill(User user)
         {
-
             try
             {
 

@@ -109,7 +109,7 @@ namespace InventoryManagementSystem
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            openForm(new OrdersForm(), hostPanel);
+            openForm(new OrdersForm(user), hostPanel);
         }
 
         private void openForm(Form form, Panel hostPanel)
