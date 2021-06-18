@@ -16,10 +16,13 @@ namespace InventoryManagementSystem
         {
             this.user = user;
             InitializeComponent();
-
             productsHelper = new ProductsHelper();
             productsHelper.SqlConnection = new SqlConnection(productsHelper.Connection);
             dgvProducts.ReadOnly = true;
+            tbName.ReadOnly = true;
+            tbDescription.ReadOnly = true;
+            tbPrice.ReadOnly = true;
+            cbCategory.Enabled = false;
         }
 
         // Set the text of labels as selected row datas
@@ -93,7 +96,6 @@ namespace InventoryManagementSystem
         {
             try
             {
-
                 productsHelper.SqlQuery = "SELECT customers.mail AS 'Mail', customers.bill AS 'Bill' FROM customers " +
                     "JOIN users ON customers.mail = users.mail WHERE customers.mail = '" + user.Mail + "';";
 
