@@ -73,7 +73,7 @@ namespace InventoryManagementSystem
                 category.Text = cat;
             }
         }
-        
+
         public void changeCustomerLabels(DataGridView dataGridView, BunifuTextBox name, BunifuTextBox price, BunifuTextBox description, ComboBox category)
         {
             if (dataGridView.CurrentCell.RowIndex + 1 < dataGridView.RowCount)

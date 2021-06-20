@@ -109,7 +109,7 @@ namespace InventoryManagementSystem
             getTotalOrderCount();
             if (user.Type.Equals(UserTypes.CUSTOMER.ToString()))
             {
-                lblTotal.Text = "TOTAL FEE: " +bill.ToString();
+                lblTotal.Text = "TOTAL FEE: " + bill.ToString();
                 tempQuery = "SELECT customers.mail AS 'Mail', products.name As 'Name', customers_products.product_count AS 'Piece', products.price As 'Price', products.description As 'Description', categories.name As 'Category'from customers_products " +
                     "JOIN customers ON customers_products.customer_id = customers.mail " +
                     "JOIN products ON customers_products.product_id = products.id " +

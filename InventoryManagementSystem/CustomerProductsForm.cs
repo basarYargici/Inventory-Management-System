@@ -10,7 +10,7 @@ namespace InventoryManagementSystem
         private ProductsHelper productsHelper;
         User user;
         private int piece;
-
+        String now;
         private float bill;
         public CustomerProductsForm(User user)
         {
@@ -41,43 +41,36 @@ namespace InventoryManagementSystem
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            if (dgvProducts.CurrentCell.RowIndex + 2 < dgvProducts.RowCount)
+            try
             {
+                now = DateTime.Now.ToString("u");
                 productsHelper.SelectedRowId = Int32.Parse(dgvProducts.SelectedRows[0].Cells["ID"].Value.ToString());
                 productsHelper.SelectedRowPrice = float.Parse(dgvProducts.SelectedRows[0].Cells["Price"].Value.ToString());
+                piece = Int32.Parse(cbPiece.SelectedItem.ToString());
+                productsHelper.SqlQuery = "INSERT INTO customers_products VALUES (@mail,@product_id," + piece + ",'"+ now + "');";
+                                           //INSERT INTO customers_products VALUES('ccc',2,1,'2008-06-15 21:15:07Z')
+                productsHelper.SqlConnection.Open();
 
-                // check category name validation
-                try
-                {
-                    piece = Int32.Parse(cbPiece.SelectedItem.ToString());
-                    productsHelper.SqlQuery = "INSERT INTO customers_products VALUES (@mail,@product_id," + piece + ");";
-                    productsHelper.SqlConnection.Open();
+                productsHelper.SqlCommand = new SqlCommand(productsHelper.SqlQuery, productsHelper.SqlConnection); // execute sql command with connection and parameters
+                productsHelper.SqlCommand.Parameters.AddWithValue("mail", user.Mail);
+                productsHelper.SqlCommand.Parameters.AddWithValue("product_id", productsHelper.SelectedRowId);
 
-                    productsHelper.SqlCommand = new SqlCommand(productsHelper.SqlQuery, productsHelper.SqlConnection); // execute sql command with connection and parameters
-                    productsHelper.SqlCommand.Parameters.AddWithValue("mail", user.Mail);
-                    productsHelper.SqlCommand.Parameters.AddWithValue("product_id", productsHelper.SelectedRowId);
+                productsHelper.SqlCommand.ExecuteNonQuery();
+                productsHelper.SqlConnection.Close();
 
-                    productsHelper.SqlCommand.ExecuteNonQuery();
-                    productsHelper.SqlConnection.Close();
+                bill += (productsHelper.SelectedRowPrice * piece);
+                Console.WriteLine("bill: " + bill);
+                Console.WriteLine("piece: " + piece);
 
-                    bill += (productsHelper.SelectedRowPrice * piece);
-                    Console.WriteLine("bill: " + bill);
-                    Console.WriteLine("piece: " + piece);
+                setBill(bill);
+                MessageBox.Show("The product has been purchased!");
 
-                    setBill(bill);
-                    MessageBox.Show("The product has been purchased!");
-
-                    productsHelper.populate(productsHelper.SqlConnection, dgvProducts);
-                }
-                catch (Exception ex)
-                {
-                    productsHelper.SqlConnection.Close();
-                    MessageBox.Show(ex.Message);
-                }
+                productsHelper.populate(productsHelper.SqlConnection, dgvProducts);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Please select a valid product");
+                productsHelper.SqlConnection.Close();
+                MessageBox.Show(ex.Message);
             }
         }
 
