@@ -110,19 +110,22 @@ namespace InventoryManagementSystem
             if (user.Type.Equals(UserTypes.CUSTOMER.ToString()))
             {
                 lblTotal.Text = "TOTAL FEE: " + bill.ToString();
-                tempQuery = "SELECT customers.mail AS 'Mail', products.name As 'Name', customers_products.product_count AS 'Piece', products.price As 'Price', products.description As 'Description', categories.name As 'Category'from customers_products " +
+                tempQuery = "SELECT customers.mail AS 'Mail', products.name As 'Name', customers_products.product_count AS 'Piece', customers_products.product_count * products.price As 'Price', " +
+                    "products.description As 'Description', customers_products.date As 'Date', categories.name As 'Category'from customers_products " +
                     "JOIN customers ON customers_products.customer_id = customers.mail " +
                     "JOIN products ON customers_products.product_id = products.id " +
-                    "JOIN categories ON categories.id = products.categoryId WHERE customers.mail = '" + user.Mail + "' ORDER BY products.price Desc";
+                    "JOIN categories ON categories.id = products.categoryId WHERE customers.mail = '" + user.Mail + "' ORDER BY Date desc";
                 populate(tempQuery);
             }
             else
             {
                 lblTotal.Text = "TOTAL ORDER COUNT: " + orderCount.ToString();
-                tempQuery = "SELECT customers.mail AS 'Mail', products.name As 'Name', customers_products.product_count AS 'Piece', products.price As 'Price', products.description As 'Description', categories.name As 'Category'from customers_products " +
+                tempQuery = "SELECT customers.mail AS 'Mail', products.name As 'Name', customers_products.product_count AS 'Piece', customers_products.product_count * products.price As 'Price', " +
+                    "products.description As 'Description', customers_products.date As 'Date', categories.name As 'Category'from customers_products " +
                     "JOIN customers ON customers_products.customer_id = customers.mail " +
                     "JOIN products ON customers_products.product_id = products.id " +
-                    "JOIN categories ON categories.id = products.categoryId";
+                    "JOIN categories ON categories.id = products.categoryId " +
+                    "ORDER BY Date desc";
                 populate(tempQuery);
             }
         }

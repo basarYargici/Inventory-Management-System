@@ -10,6 +10,7 @@ namespace InventoryManagementSystem
         private ProductsHelper productsHelper;
         User user;
         private int piece;
+        private int productCount;
         String now;
         private float bill;
         public CustomerProductsForm(User user)
@@ -36,7 +37,14 @@ namespace InventoryManagementSystem
             {
                 cbPiece.Items.Add(i);
             }
-            cbPiece.SelectedIndex = 0;
+            if (getProductCount(productsHelper.SelectedRowId) != 0)
+            {
+                cbPiece.SelectedIndex = 0;
+            }
+            if (cbPiece.SelectedItem != null)
+            {
+                piece = Int32.Parse(cbPiece.SelectedItem.ToString());
+            }
         }
 
         private void btnBuy_Click(object sender, EventArgs e)
@@ -44,28 +52,41 @@ namespace InventoryManagementSystem
             try
             {
                 now = DateTime.Now.ToString("u");
+
                 productsHelper.SelectedRowId = Int32.Parse(dgvProducts.SelectedRows[0].Cells["ID"].Value.ToString());
                 productsHelper.SelectedRowPrice = float.Parse(dgvProducts.SelectedRows[0].Cells["Price"].Value.ToString());
-                piece = Int32.Parse(cbPiece.SelectedItem.ToString());
-                productsHelper.SqlQuery = "INSERT INTO customers_products VALUES (@mail,@product_id," + piece + ",'"+ now + "');";
-                                           //INSERT INTO customers_products VALUES('ccc',2,1,'2008-06-15 21:15:07Z')
-                productsHelper.SqlConnection.Open();
+                productsHelper.SelectedRowQuantity = Int32.Parse(dgvProducts.SelectedRows[0].Cells["Quantity"].Value.ToString());
+                
 
-                productsHelper.SqlCommand = new SqlCommand(productsHelper.SqlQuery, productsHelper.SqlConnection); // execute sql command with connection and parameters
-                productsHelper.SqlCommand.Parameters.AddWithValue("mail", user.Mail);
-                productsHelper.SqlCommand.Parameters.AddWithValue("product_id", productsHelper.SelectedRowId);
+                // if product is in stock
+                if (getProductCount(productsHelper.SelectedRowId) > piece)
+                {
+                    productsHelper.SqlQuery = "INSERT INTO customers_products VALUES (@mail,@product_id," + piece + ",'" + now + "');";
+                    //INSERT INTO customers_products VALUES('ccc',2,1,'2008-06-15 21:15:07Z')
+                    productsHelper.SqlConnection.Open();
 
-                productsHelper.SqlCommand.ExecuteNonQuery();
-                productsHelper.SqlConnection.Close();
+                    productsHelper.SqlCommand = new SqlCommand(productsHelper.SqlQuery, productsHelper.SqlConnection); // execute sql command with connection and parameters
+                    productsHelper.SqlCommand.Parameters.AddWithValue("mail", user.Mail);
+                    productsHelper.SqlCommand.Parameters.AddWithValue("product_id", productsHelper.SelectedRowId);
 
-                bill += (productsHelper.SelectedRowPrice * piece);
-                Console.WriteLine("bill: " + bill);
-                Console.WriteLine("piece: " + piece);
+                    productsHelper.SqlCommand.ExecuteNonQuery();
+                    productsHelper.SqlConnection.Close();
 
-                setBill(bill);
-                MessageBox.Show("The product has been purchased!");
+                    bill += (productsHelper.SelectedRowPrice * piece);
+                    Console.WriteLine("bill: " + bill);
+                    Console.WriteLine("piece: " + piece);
 
-                productsHelper.populate(productsHelper.SqlConnection, dgvProducts);
+                    setBill(bill);
+                    setProductCount(productsHelper.SelectedRowId, piece);
+                    MessageBox.Show("The product has been purchased!");
+
+                    productsHelper.populate(productsHelper.SqlConnection, dgvProducts);
+                }
+                else
+                {
+                    MessageBox.Show("Out of stock!");
+
+                }
             }
             catch (Exception ex)
             {
@@ -74,15 +95,54 @@ namespace InventoryManagementSystem
             }
         }
 
-        private void CustomerProductsForm_Load(object sender, EventArgs e)
+        private int getProductCount(int id)
         {
-            // TODO: This line of code loads data into the 'finalDBDataSet.products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.finalDBDataSet.products);
-            // TODO: This line of code loads data into the 'finalDBDataSet.categories' table. You can move, or remove it, as needed.
-            this.categoriesTableAdapter.Fill(this.finalDBDataSet.categories);
-            productsHelper.populate(productsHelper.SqlConnection, dgvProducts);
-            productsHelper.changeCustomerLabels(dgvProducts, tbName, tbPrice, tbDescription, cbCategory);
+            try
+            {
+                productCount = 0;
+                productsHelper.SqlQuery = "SELECT products.quantity FROM products WHERE products.id = " + id + ";";
 
+                productsHelper.SqlConnection.Open();
+
+                productsHelper.SqlCommand = new SqlCommand(productsHelper.SqlQuery, productsHelper.SqlConnection); // execute sql command with connection and parameters
+
+                SqlDataReader reader = productsHelper.SqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    productCount = Int32.Parse(reader[0].ToString());
+                }
+                // Console.WriteLine(bill);
+
+                productsHelper.SqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return productCount;
+        }
+
+        private void setProductCount(int id, int piece)
+        {
+            try
+            {
+                productsHelper.SqlQuery = "UPDATE products SET quantity -= " + piece + " WHERE products.id = " + id + ";";
+
+                productsHelper.SqlConnection.Open();
+
+                productsHelper.SqlCommand = new SqlCommand(productsHelper.SqlQuery, productsHelper.SqlConnection); // execute sql command with connection and parameters
+
+                productsHelper.SqlCommand.ExecuteNonQuery();
+                // Console.WriteLine(bill);
+
+                productsHelper.SqlConnection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private float getBill(User user)
@@ -133,6 +193,17 @@ namespace InventoryManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void CustomerProductsForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'finalDBDataSet.products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.finalDBDataSet.products);
+            // TODO: This line of code loads data into the 'finalDBDataSet.categories' table. You can move, or remove it, as needed.
+            this.categoriesTableAdapter.Fill(this.finalDBDataSet.categories);
+            productsHelper.populate(productsHelper.SqlConnection, dgvProducts);
+            productsHelper.changeCustomerLabels(dgvProducts, tbName, tbPrice, tbDescription, cbCategory);
+
         }
     }
 }
