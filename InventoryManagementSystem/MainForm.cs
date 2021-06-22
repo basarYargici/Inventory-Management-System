@@ -99,7 +99,7 @@ namespace InventoryManagementSystem
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            openForm(new CustomersForm(), hostPanel);
+            openForm(new CustomersForm(user), hostPanel);
         }
 
         private void btnCategories_Click(object sender, EventArgs e)
