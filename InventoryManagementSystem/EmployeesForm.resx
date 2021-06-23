@@ -117,4 +117,115 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="productsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1759, 21</value>
+  </metadata>
+  <metadata name="categoriesBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 64</value>
+  </metadata>
+  <metadata name="finalDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>251, 64</value>
+  </metadata>
+  <metadata name="categoriesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>409, 64</value>
+  </metadata>
+  <metadata name="productsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>627, 64</value>
+  </metadata>
+  <metadata name="categoriesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>842, 64</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnDelete.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAVkAAABkCAYAAAAsYUMcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGBSURBVHhe7dShAYAwAMAwLtnL8B9n4Dc4AAd1EVH13cYx
+        z3GsBcDf5vlM9i0A8AeTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkC
+        hEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSy
+        ACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZ
+        LEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFC
+        JgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmA
+        kMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQhtY5/XWwDgo31eN/57KGMci4hz
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnEdit.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAVkAAABdCAYAAAAPFBV5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFqSURBVHhe7dShAYAwAMAwLtnL8B9n4Dc4AAd1EVH13cYx
+        z3GsBcDf5vlM9i0A8AeTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkC
+        hEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSy
+        ACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZ
+        LEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFC
+        JgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmA
+        kMkChEwWIGSyACGTBQiZLEBoG/u83gIAH+3zugEJ6/JJhZhVcQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnAdd.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAVkAAABdCAYAAAAPFBV5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFqSURBVHhe7dShAYAwAMAwLtnL8B9n4Dc4AAd1EVH13cYx
+        z3GsBcDf5vlM9i0A8AeTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkC
+        hEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSy
+        ACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZ
+        LEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFC
+        JgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmAkMkChEwWIGSyACGTBQiZLEDIZAFCJgsQMlmA
+        kMkChEwWIGSyACGTBQiZLEBoG/u83gIAH+3zugEJ6/JJhZhVcQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="tbPassword.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAVkAAABdCAYAAAAPFBV5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF5SURBVHhe7dQxDQMxAARB80fll2EERgDkZclNem83I11z
+        AHYAEFtrfeacPzMzu7Pd1ZPYMfYBwD27qyexIgtwm8gChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgC
+        hEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSy
+        ACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJ
+        LEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFC
+        IgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmA
+        kMgChEQWICSyACGRBQiJLEBIZAFCIgsQ+ovs8zzffZiZ2Z3trp7EAtAY4wWNoWpyg02XawAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="tbSalary.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAVkAAABdCAYAAAAPFBV5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF5SURBVHhe7dQxDQMxAARB80fll2EERgDkZclNem83I11z
+        AHYAEFtrfeacPzMzu7Pd1ZPYMfYBwD27qyexIgtwm8gChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgC
+        hEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSy
+        ACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJ
+        LEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFC
+        IgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmA
+        kMgChEQWICSyACGRBQiJLEBIZAFCIgsQ+ovs8zzffZiZ2Z3trp7EAtAY4wWNoWpyg02XawAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="tbSurname.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAVkAAABdCAYAAAAPFBV5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF5SURBVHhe7dQxDQMxAARB80fll2EERgDkZclNem83I11z
+        AHYAEFtrfeacPzMzu7Pd1ZPYMfYBwD27qyexIgtwm8gChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgC
+        hEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSy
+        ACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJ
+        LEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFC
+        IgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmA
+        kMgChEQWICSyACGRBQiJLEBIZAFCIgsQ+ovs8zzffZiZ2Z3trp7EAtAY4wWNoWpyg02XawAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="tbName.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAVkAAABdCAYAAAAPFBV5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF5SURBVHhe7dQxDQMxAARB80fll2EERgDkZclNem83I11z
+        AHYAEFtrfeacPzMzu7Pd1ZPYMfYBwD27qyexIgtwm8gChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgC
+        hEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSy
+        ACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJ
+        LEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFC
+        IgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmAkMgChEQWICSyACGRBQiJLEBIZAFCIgsQElmA
+        kMgChEQWICSyACGRBQiJLEBIZAFCIgsQ+ovs8zzffZiZ2Z3trp7EAtAY4wWNoWpyg02XawAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <metadata name="finalDBDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1067, 64</value>
+  </metadata>
 </root>

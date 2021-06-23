@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace InventoryManagementSystem
@@ -84,7 +85,8 @@ namespace InventoryManagementSystem
             productsHelper.SelectedRowId = Int32.Parse(dgvProducts.SelectedRows[0].Cells["ID"].Value.ToString());
             try
             {
-                productsHelper.SqlQuery = "DELETE FROM products WHERE id = (@id);";
+                productsHelper.SqlQuery = "DELETE FROM customers_products WHERE product_id = (@id);"+
+                     "DELETE FROM products WHERE id = (@id);";
                 productsHelper.SqlConnection.Open();
 
                 productsHelper.SqlCommand = new SqlCommand(productsHelper.SqlQuery, productsHelper.SqlConnection); // execute sql command with connection and parameters
@@ -105,12 +107,10 @@ namespace InventoryManagementSystem
 
         private void NonCustomerProductsForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'finalDBDataSet.products' table. You can move, or remove it, as needed.
             this.productsTableAdapter.Fill(this.finalDBDataSet.products);
-            // TODO: This line of code loads data into the 'finalDBDataSet.categories' table. You can move, or remove it, as needed.
             this.categoriesTableAdapter.Fill(this.finalDBDataSet.categories);
             productsHelper.populate(productsHelper.SqlConnection, dgvProducts);
-            productsHelper.changeNonCustomerLabels(dgvProducts, tbName, tbPrice, tbQuantity, tbDescription, cbCategory);
+            //productsHelper.changeNonCustomerLabels(dgvProducts, tbName, tbPrice, tbQuantity, tbDescription, cbCategory);
         }
 
         // Set the text of labels as selected row datas
