@@ -13,6 +13,7 @@ namespace InventoryManagementSystem
         private int productCount;
         String now;
         private float bill;
+
         public CustomerProductsForm(User user)
         {
             this.user = user;
@@ -52,12 +53,14 @@ namespace InventoryManagementSystem
                 productsHelper.SelectedRowId = Int32.Parse(dgvProducts.SelectedRows[0].Cells["ID"].Value.ToString());
                 productsHelper.SelectedRowPrice = float.Parse(dgvProducts.SelectedRows[0].Cells["Price"].Value.ToString());
                 productsHelper.SelectedRowQuantity = Int32.Parse(dgvProducts.SelectedRows[0].Cells["Quantity"].Value.ToString());
-
-                // TODO if quantity = 1, it gives error when you buy two times check
-                // if product is in stock
-                if (piece == 1 || getProductCount(productsHelper.SelectedRowId) > piece)
+                if(cbPiece.SelectedItem != null)
                 {
                     piece = Int32.Parse(cbPiece.SelectedItem.ToString());
+                }
+               
+                // if product is in stock
+                if (getProductCount(productsHelper.SelectedRowId) >= piece)
+                {
                     productsHelper.SqlQuery = "INSERT INTO customers_products VALUES (@mail,@product_id," + piece + ",'" + now + "');";
                     //INSERT INTO customers_products VALUES('ccc',2,1,'2008-06-15 21:15:07Z')
                     productsHelper.SqlConnection.Open();
