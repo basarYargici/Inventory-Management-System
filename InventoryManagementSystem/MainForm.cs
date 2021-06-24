@@ -76,7 +76,6 @@ namespace InventoryManagementSystem
                 StartPosition = StartPosition
             }.ShowDialog();
             this.Close();
-
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
@@ -114,7 +113,6 @@ namespace InventoryManagementSystem
 
         private void openForm(Form form, Panel hostPanel)
         {
-
             if (hostPanel != null)
             {
                 while (hostPanel.Controls.Count > 0)
@@ -134,7 +132,5 @@ namespace InventoryManagementSystem
                 // this.Close();
             }
         }
-
-
     }
 }

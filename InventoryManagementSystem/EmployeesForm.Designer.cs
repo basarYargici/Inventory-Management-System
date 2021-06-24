@@ -53,12 +53,6 @@ namespace InventoryManagementSystem
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.productsTableAdapter = new InventoryManagementSystem.finalDBDataSetTableAdapters.productsTableAdapter();
-            this.categoriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.finalDBDataSet = new InventoryManagementSystem.finalDBDataSet();
-            this.categoriesTableAdapter = new InventoryManagementSystem.finalDBDataSetTableAdapters.categoriesTableAdapter();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblBack = new System.Windows.Forms.TableLayoutPanel();
             this.tblLeft = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelete = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -72,44 +66,12 @@ namespace InventoryManagementSystem
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvEmployees = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.finalDBDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             this.tblBack.SuspendLayout();
             this.tblLeft.SuspendLayout();
             this.tblRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.finalDBDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
-            // categoriesBindingSource1
-            // 
-            this.categoriesBindingSource1.DataMember = "categories";
-            this.categoriesBindingSource1.DataSource = this.finalDBDataSet;
-            // 
-            // finalDBDataSet
-            // 
-            this.finalDBDataSet.DataSetName = "finalDBDataSet";
-            this.finalDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // categoriesTableAdapter
-            // 
-            this.categoriesTableAdapter.ClearBeforeFill = true;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "products";
-            this.productsBindingSource.DataSource = this.finalDBDataSet;
-            // 
-            // categoriesBindingSource
-            // 
-            this.categoriesBindingSource.DataMember = "categories";
-            this.categoriesBindingSource.DataSource = this.finalDBDataSet;
             // 
             // tblBack
             // 
@@ -826,10 +788,6 @@ namespace InventoryManagementSystem
             this.Name = "EmployeesForm";
             this.Text = "EmployeeForm";
             this.Load += new System.EventHandler(this.EmployeesForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
             this.tblBack.ResumeLayout(false);
             this.tblLeft.ResumeLayout(false);
             this.tblRight.ResumeLayout(false);
@@ -841,13 +799,6 @@ namespace InventoryManagementSystem
         }
 
         #endregion
-
-        private finalDBDataSetTableAdapters.productsTableAdapter productsTableAdapter;
-        private System.Windows.Forms.BindingSource categoriesBindingSource1;
-        private finalDBDataSet finalDBDataSet;
-        private finalDBDataSetTableAdapters.categoriesTableAdapter categoriesTableAdapter;
-        private System.Windows.Forms.BindingSource productsBindingSource;
-        private System.Windows.Forms.BindingSource categoriesBindingSource;
         private System.Windows.Forms.TableLayoutPanel tblBack;
         private System.Windows.Forms.TableLayoutPanel tblLeft;
         private Bunifu.UI.WinForms.BunifuTextBox tbName;

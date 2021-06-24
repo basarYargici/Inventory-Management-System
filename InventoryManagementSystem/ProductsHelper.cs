@@ -88,7 +88,7 @@ namespace InventoryManagementSystem
                 name.Text = SelectedRowName;
                 price.Text = "Price: " + SelectedRowPrice.ToString();
                 description.Text = SelectedRowDescription;
-                if(cat != null)
+                if (cat != null)
                 {
                     category.Text = cat;
                 }

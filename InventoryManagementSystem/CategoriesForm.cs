@@ -45,7 +45,6 @@ namespace InventoryManagementSystem
 
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
-            // check category name validation
             try
             {
                 sqlQuery = "INSERT INTO categories VALUES(@category);";
@@ -124,8 +123,6 @@ namespace InventoryManagementSystem
         {
             populate();
         }
-
-        // Set the text of labels as selected row datas
 
         private void dgvCustomers_CellClick(object sender, DataGridViewCellEventArgs e)
         {

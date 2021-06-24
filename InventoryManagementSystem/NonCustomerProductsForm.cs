@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace InventoryManagementSystem
@@ -85,7 +84,7 @@ namespace InventoryManagementSystem
             productsHelper.SelectedRowId = Int32.Parse(dgvProducts.SelectedRows[0].Cells["ID"].Value.ToString());
             try
             {
-                productsHelper.SqlQuery = "DELETE FROM customers_products WHERE product_id = (@id);"+
+                productsHelper.SqlQuery = "DELETE FROM customers_products WHERE product_id = (@id);" +
                      "DELETE FROM products WHERE id = (@id);";
                 productsHelper.SqlConnection.Open();
 

@@ -80,7 +80,11 @@ namespace InventoryManagementSystem
         private void EmployeesForm_Load(object sender, EventArgs e)
         {
             populate();
-            changeEmployeeLabels();
+            if (dgvEmployees.DataMember != "")
+            {
+                changeEmployeeLabels();
+
+            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -105,7 +109,6 @@ namespace InventoryManagementSystem
 
                 populate();
             }
-
             catch (Exception ex)
             {
                 sqlConnection.Close();
@@ -156,7 +159,5 @@ namespace InventoryManagementSystem
         {
             changeEmployeeLabels();
         }
-
-
     }
 }

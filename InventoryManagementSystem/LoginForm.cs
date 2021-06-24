@@ -21,7 +21,6 @@ namespace InventoryManagementSystem
         {
             InitializeComponent();
             tbPassword.UseSystemPasswordChar = true; // hide password field
-
         }
         private void lbExit_Click(object sender, EventArgs e)
         {
@@ -48,6 +47,7 @@ namespace InventoryManagementSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // close this form, go to next form with giving user as a parameter
             if (login())
             {
                 this.Hide();
@@ -59,8 +59,6 @@ namespace InventoryManagementSystem
                 }.ShowDialog();
                 this.Close();
             }
-            // close this form, go to next form with giving user as a parameter
-
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
@@ -84,7 +82,6 @@ namespace InventoryManagementSystem
 
         private Boolean signUp()
         {
-
             if (validateInput())
             {
                 try
@@ -216,7 +213,5 @@ namespace InventoryManagementSystem
             }
             return true;
         }
-
-
     }
 }

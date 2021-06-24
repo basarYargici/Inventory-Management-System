@@ -53,16 +53,15 @@ namespace InventoryManagementSystem
                 productsHelper.SelectedRowId = Int32.Parse(dgvProducts.SelectedRows[0].Cells["ID"].Value.ToString());
                 productsHelper.SelectedRowPrice = float.Parse(dgvProducts.SelectedRows[0].Cells["Price"].Value.ToString());
                 productsHelper.SelectedRowQuantity = Int32.Parse(dgvProducts.SelectedRows[0].Cells["Quantity"].Value.ToString());
-                if(cbPiece.SelectedItem != null)
+                if (cbPiece.SelectedItem != null)
                 {
                     piece = Int32.Parse(cbPiece.SelectedItem.ToString());
                 }
-               
+
                 // if product is in stock
                 if (getProductCount(productsHelper.SelectedRowId) >= piece)
                 {
                     productsHelper.SqlQuery = "INSERT INTO customers_products VALUES (@mail,@product_id," + piece + ",'" + now + "');";
-                    //INSERT INTO customers_products VALUES('ccc',2,1,'2008-06-15 21:15:07Z')
                     productsHelper.SqlConnection.Open();
 
                     productsHelper.SqlCommand = new SqlCommand(productsHelper.SqlQuery, productsHelper.SqlConnection); // execute sql command with connection and parameters
@@ -178,7 +177,9 @@ namespace InventoryManagementSystem
         {
             try
             {
-                productsHelper.SqlQuery = "UPDATE customers SET bill =" + bill + " WHERE customers.mail = '" + user.Mail + "';";
+                String a = bill.ToString().Replace(',', '.');
+
+                productsHelper.SqlQuery = "UPDATE customers SET bill =" + a + " WHERE customers.mail = '" + user.Mail + "';";
 
                 productsHelper.SqlConnection.Open();
 
@@ -197,12 +198,14 @@ namespace InventoryManagementSystem
 
         private void CustomerProductsForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'finalDBDataSet.products' table. You can move, or remove it, as needed.
-            this.productsTableAdapter.Fill(this.finalDBDataSet.products);
-            // TODO: This line of code loads data into the 'finalDBDataSet.categories' table. You can move, or remove it, as needed.
-            this.categoriesTableAdapter.Fill(this.finalDBDataSet.categories);
+            //this.productsTableAdapter.Fill(this.finalDBDataSet.products);
+            //this.categoriesTableAdapter.Fill(this.finalDBDataSet.categories);
             productsHelper.populate(productsHelper.SqlConnection, dgvProducts);
-            productsHelper.changeCustomerLabels(dgvProducts, tbName, tbPrice, tbDescription, cbCategory);
+            if (dgvProducts.DataMember != "")
+            {
+                productsHelper.changeCustomerLabels(dgvProducts, tbName, tbPrice, tbDescription, cbCategory);
+
+            }
 
         }
     }
